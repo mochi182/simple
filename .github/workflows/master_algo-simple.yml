@@ -33,7 +33,7 @@ jobs:
           name: node-app
           path: .
 
-      - script: Mapear variables de entorno
+      - name: Mapear variables de entorno
         env:
           SOKETIN: $(SOKETIN)
 
