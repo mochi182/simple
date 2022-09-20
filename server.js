@@ -2,12 +2,12 @@
 const createError = require('http-errors');
 const express = require('express')
 const app = express()
-const port = 80 || 8080 || 3000
+const port = process.env.PORT || 3000
 
 // ...
 
 app.get('/', (req, res) => {
-  res.send('<h1>API simple</h1>')
+  res.send('<h1>API simple</h1>' + port + " " + toString(process.env.SOKETIN))
 })
 
 app.get('/ruta', (req, res) => {
