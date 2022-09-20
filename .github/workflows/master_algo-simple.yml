@@ -21,5 +21,5 @@ jobs:
     - name: Ecoloco2
       run: echo $SOKETON
 
-    - name: Ecoloco
+    - name: Ecoloco3
       run: echo ${{ secret.SOKETIN }}
