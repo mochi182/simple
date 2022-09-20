@@ -7,13 +7,13 @@ const port = process.env.PORT || 3000
 // Configurar variables de entorno (.env)
 
 var dotenv = require('dotenv');
-dotenv_path = './env/.env';
+dotenv_path = '.env';
 dotenv.config({path: dotenv_path});
 
 // ...
 
 app.get('/', (req, res) => {
-  res.send('<h1>API simple</h1>' + port + " " + toString(process.env.SOKETIN))
+  res.send('<h1>API simple</h1>' + port + " " + toString(process.env.soketin) + " " + toString(process.env.soketon))
 })
 
 app.get('/ruta', (req, res) => {
