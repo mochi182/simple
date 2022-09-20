@@ -39,9 +39,6 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    env:
-        SOKETIN: $SOKETIN
-        SOKETON: $(SOKETON)
 
     steps:
       - name: Download artifact from build job
@@ -57,3 +54,16 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_94D320FEC34342C095FC9AD582F9D132 }}
           package: .      
+
+  create-envfile:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1.3
+      with:
+        envkey_SOKETIN: ${{ secrets.SOKETIN }}
+        envkey_SOKETON: ${{ secrets.SOKETON }}
+        directory: ./env/
+        file_name: .env
+        fail_on_empty: false

@@ -4,6 +4,12 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
+// Configurar variables de entorno (.env)
+
+var dotenv = require('dotenv');
+dotenv_path = './env/.env';
+dotenv.config({path: dotenv_path});
+
 // ...
 
 app.get('/', (req, res) => {
