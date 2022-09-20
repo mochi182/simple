@@ -13,7 +13,7 @@ dotenv.config({path: dotenv_path});
 // ...
 
 app.get('/', (req, res) => {
-  res.send('<h1>API simple</h1>' + port + " " + toString(process.env.SOKETIN) + " " + toString(process.env["SOKETON"]))
+  res.send('<h1>API simple</h1>' + port + " " + toString(process.env.soketin) + " " + toString(process.env["soketon"]) + " " + toString(process.env))
 })
 
 app.get('/ruta', (req, res) => {
