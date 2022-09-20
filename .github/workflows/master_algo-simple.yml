@@ -33,16 +33,15 @@ jobs:
           name: node-app
           path: .
 
-      - name: Mapear variables de entorno
-        env:
-          SOKETIN: $(SOKETIN)
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    env:
+        SOKETIN: $SOKETIN
+        SOKETON: $(SOKETON)
 
     steps:
       - name: Download artifact from build job
