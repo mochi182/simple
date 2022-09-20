@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 // ...
 
 app.get('/', (req, res) => {
-  res.send('<h1>API simple</h1>' + port + " " + toString($(process.env.SOKETIN)))
+  res.send('<h1>API simple</h1>' + port + " " + toString(process.env.SOKETIN))
 })
 
 app.get('/ruta', (req, res) => {
