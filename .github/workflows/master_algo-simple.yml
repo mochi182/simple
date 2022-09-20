@@ -38,7 +38,7 @@ jobs:
     needs: build
     steps:
     - name: Ecoloco
-      run: echo "$SOKETIN. $SOKETON!"
+      run: echo $(SOKETIN)
 
   deploy:
     runs-on: ubuntu-latest
